@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <link rel="stylesheet" href="project1.2.css">
+</head>
+<body>
+    <div class="center">
+        <h1>Login</h1>
+        <form method="post" id="form" onsubmit="passwordValidation(), usernameValidation()"  autocomplete="off">
+            <!-- <div class="txt_field">
+                <input type="email" type="email" required>
+                <span></span>
+                <label>E-mail</label>
+            </div> -->
+            <div class="txt_field">
+                <input type="text" id="user" required>
+                <span></span>
+                <label>Username</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" id="pass" required>
+                <span></span>
+                <label>Password</label>
+            </div>
+            <div class="pass">Forgot Password?</div>
+            <input type="submit" value="Login">
+            <div class="signup_link">
+                Not a member? <a href="#">Signup</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function passwordValidation(){
+            let pass = document.getElementById("pass").value;
+            if (pass == ""){
+                alert ("Password must not be empty")
+                return false;
+            }
+            if (pass.length<8){
+                alert ("Password length must be 8 characters")
+                return false;
+            }
+            if (pass.search(/[0-9]/)==-1) {
+                alert("Password must contains atleast one number")
+                return false;
+            }
+        }
+        function usernameValidation(){
+            let user = document.getElementById("user").value;
+            if (user == ""){
+                alert ("Username must not be empty")
+                return false;
+            }
+            if (user.length<4){
+                alert ("Username length must be 4 characters")
+                return false;
+            }
+            else {
+                alert("successfully logged");
+            }
+        }
+    </script>
+
+</body>
+</html>
